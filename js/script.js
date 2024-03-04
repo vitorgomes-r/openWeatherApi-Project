@@ -27,9 +27,12 @@ document.querySelector('#search').addEventListener('submit', async (event) =>{
             humidity: json.main.humidity
         })
     }else{
-        
         document.querySelector('#weather').classList.remove('show')
-showAlert(`Não foi possível localizar...<img src="notFound.svg" alt="Imagem demostrando que não foi possível locailizar a cidade">`)
+showAlert(`Não foi possível localizar...
+            <img src = '../images/notFound.svg'/>
+    `
+    )
+
     }
 })
 
