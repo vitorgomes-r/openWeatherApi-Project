@@ -1,7 +1,7 @@
 document.querySelector('#search').addEventListener('submit', async (event) =>{
     event.preventDefault()
 
-    const cityName = document.querySelector('#cityName').value.replace(/\s/g, "")
+    const cityName = document.querySelector('#cityName').value
     if (!cityName){
         document.querySelector('#weather').classList.add('remove')
         return showAlert('Você precisa digitar uma cidade...')
