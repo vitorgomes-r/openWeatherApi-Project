@@ -1,7 +1,7 @@
 document.querySelector('#search').addEventListener('submit', async (event) =>{
     event.preventDefault()
 
-    const cityName = document.querySelector('#cityName').value
+    const cityName = document.querySelector('#cityName').value.replace(/\s/g, "")
     if (!cityName){
         document.querySelector('#weather').classList.add('remove')
         return showAlert('Você precisa digitar uma cidade...')
@@ -29,7 +29,7 @@ document.querySelector('#search').addEventListener('submit', async (event) =>{
     }else{
         document.querySelector('#weather').classList.remove('show')
 showAlert(`Não foi possível localizar...
-            <img src = 'images/notFound.svg'/>
+            <img src='images/notFound.svg' alt='Imagem demostrando que não foi possível localizar a imagem'/>
     `
     )
 
@@ -40,7 +40,7 @@ const showInfo = (json)=>{
     showAlert('')
     document.querySelector('#weather').classList.add('show')
 
-    document.querySelector('#title').innerHTML = `${json.city}, ${json.country}`
+    document.querySelector('#title').innerHTML = `${json.city} | ${json.country}`
     document.querySelector('#temp_value').innerHTML = `${json.temp.toFixed(1).toString().replace('.', ',')}<sup>C°</sup>`
     document.querySelector('#temp_max').innerHTML = `${json.tempMax.toFixed(1).toString().replace('.', ',')}<sup>C°</sup>`
     document.querySelector('#temp_min').innerHTML = `${json.tempMin.toFixed(1).toString().replace('.', ',')}<sup>C°</sup>`
