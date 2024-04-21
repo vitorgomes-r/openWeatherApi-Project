@@ -32,7 +32,6 @@ showAlert(`Não foi possível localizar...
             <img src='images/notFound.svg' alt='Imagem demostrando que não foi possível localizar a imagem'/>
     `
     )
-
     }
 })
 
